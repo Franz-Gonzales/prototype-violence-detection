@@ -1,9 +1,10 @@
 import os
 import logging
 import uvicorn
-from fastapi import FastAPI, WebSocket, WebSocketDisconnect
+from fastapi import FastAPI, WebSocket, WebSocketDisconnect, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from contextlib import asynccontextmanager
+from typing import Dict
 
 from app.config import settings
 from app.models.database import init_db, get_db
