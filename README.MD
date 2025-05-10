@@ -124,3 +124,6 @@ El sistema utiliza los siguientes modelos:
 
 # Desde el directorio backend
 - python -m app.main
+
+- set PYTHONPATH=C:\GONZALES\Proyecto-IA3\prototype-violence-detection\backend
+- python -m app.main

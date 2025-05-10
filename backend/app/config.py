@@ -3,7 +3,11 @@ from pydantic_settings import BaseSettings
 from typing import Optional, List
 import torch
 
+
 class Settings(BaseSettings):
+    # Hacer PYTHONPATH opcional con un valor por defecto
+    PYTHONPATH: Optional[str] = None  
+
     # Configuración del servidor
     HOST: str = "0.0.0.0"
     PORT: int = 8000
@@ -15,7 +19,7 @@ class Settings(BaseSettings):
     DATABASE_URL: str = "sqlite:///./data/db.sqlite"
 
     # Configuración de la cámara
-    CAMERA_URL: str = "http://192.168.1.100:8080/video"
+    CAMERA_URL: str = "http://192.168.1.4:8080/video"
     CAMERA_USER: Optional[str] = None
     CAMERA_PASSWORD: Optional[str] = None
     CAMERA_LOCATION: str = "Pasillo Principal"
@@ -51,6 +55,7 @@ class Settings(BaseSettings):
     class Config:
         env_file = ".env"
         case_sensitive = True
+        extra = "allow"
 
 
 # Crear instancia global de configuración

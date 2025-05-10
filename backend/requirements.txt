@@ -28,3 +28,5 @@ loguru
 # Otras dependencias
 torch
 deep-sort-realtime
+torchvision
+deep-sort-realtime[gpu]
