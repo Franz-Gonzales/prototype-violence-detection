@@ -1,0 +1,5 @@
+frontend/node_modules
+.venv
+backend/.venv
+backend/weights
+backend/.env

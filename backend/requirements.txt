@@ -1,0 +1,29 @@
+# Framework y API
+fastapi
+uvicorn[standard]
+pydantic
+pydantic-settings
+python-dotenv
+aiohttp
+
+# Base de datos
+sqlalchemy
+alembic
+
+# Procesamiento de video e imágenes
+opencv-python
+decord
+pillow
+
+# Inferencia de modelos
+onnxruntime
+onnxruntime-gpu
+numpy
+
+# Utilidades
+python-multipart
+tqdm
+loguru
+
+# Otras dependencias
+torch
