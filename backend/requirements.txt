@@ -27,3 +27,4 @@ loguru
 
 # Otras dependencias
 torch
+deep-sort-realtime

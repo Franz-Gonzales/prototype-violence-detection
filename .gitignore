@@ -1,5 +1,5 @@
 frontend/node_modules
-.venv
+venv
 backend/.venv
 backend/weights
 backend/.env

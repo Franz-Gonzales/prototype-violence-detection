@@ -9,6 +9,7 @@ class Settings(BaseSettings):
     PORT: int = 8000
     DEBUG: bool = True
     LOG_LEVEL: str = "INFO"
+    CLIP_FPS: int = 30 
 
     # Configuración de la base de datos
     DATABASE_URL: str = "sqlite:///./data/db.sqlite"
@@ -22,7 +23,7 @@ class Settings(BaseSettings):
     # Configuración de los modelos de IA
     MODELS_DIR: str = "./weights"
     YOLO_MODEL_PATH: str = "./weights/yolo11_people_final.onnx"
-    DEEPSORT_MODEL_PATH: str = "./weights/deepsort.onnx"
+    # DEEPSORT_MODEL_PATH: str = "./weights/deepsort.onnx"
     TIMESFORMER_MODEL_PATH: str = "./weights/timesformer_final.onnx"
 
     # Umbrales de detección

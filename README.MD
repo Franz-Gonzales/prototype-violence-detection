@@ -103,3 +103,24 @@ violence-detector/
     "vite": "^6.3.5"
   }
 }
+
+
+## Modelos de IA
+
+El sistema utiliza los siguientes modelos:
+
+1. **YOLOv11**: Modelo entrenado para detección de personas, exportado en formato ONNX.
+   - Ubicación: `weights/yolo11_people_final.onnx`
+
+2. **DeepSORT**: Implementado utilizando la biblioteca `deep-sort-realtime`, que incluye modelos pre-entrenados para extracción de características (no requiere un modelo ONNX separado).
+
+3. **TimeSformer**: Modelo entrenado para clasificación de violencia, exportado en formato ONNX.
+   - Ubicación: `weights/timesformer_final.onnx`
+
+
+# Windows
+- python -m venv venv
+- venv\Scripts\activate
+
+# Desde el directorio backend
+- python -m app.main
