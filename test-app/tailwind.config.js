@@ -1,12 +1,16 @@
 /** @type {import('tailwindcss').Config} */
+import forms from '@tailwindcss/forms'
 export default {
     content: [
-        "./index.html",
-        "./src/**/*.{js,ts,jsx,tsx}",
+        './index.html',
+        './src/**/*.{js,ts,jsx,tsx}',
     ],
+    darkMode: 'class',
     theme: {
         extend: {
+            // Custom colors for consistent branding
             colors: {
+                // Primary: Main brand color for buttons, links, etc.
                 primary: {
                     50: '#f0f9ff',
                     100: '#e0f2fe',
@@ -19,6 +23,7 @@ export default {
                     800: '#075985',
                     900: '#0c4a6e',
                 },
+                // Secondary: Accent color for secondary actions
                 secondary: {
                     50: '#fdf4ff',
                     100: '#fae8ff',
@@ -31,6 +36,7 @@ export default {
                     800: '#86198f',
                     900: '#701a75',
                 },
+                // Danger: For errors and alerts
                 danger: {
                     50: '#fef2f2',
                     100: '#fee2e2',
@@ -43,6 +49,7 @@ export default {
                     800: '#991b1b',
                     900: '#7f1d1d',
                 },
+                // Success: For confirmations
                 success: {
                     50: '#f0fdf4',
                     100: '#dcfce7',
@@ -55,6 +62,7 @@ export default {
                     800: '#166534',
                     900: '#14532d',
                 },
+                // Warning: For cautions
                 warning: {
                     50: '#fffbeb',
                     100: '#fef3c7',
@@ -72,7 +80,12 @@ export default {
                 sans: ['Inter', 'ui-sans-serif', 'system-ui'],
                 mono: ['JetBrains Mono', 'monospace'],
             },
+            screens: {
+                '2xl': '1440px',
+            },
         },
     },
-    plugins: [],
+    plugins: [
+        forms
+    ],
 }

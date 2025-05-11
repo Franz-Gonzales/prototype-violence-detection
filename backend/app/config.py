@@ -2,8 +2,7 @@ import os
 from pydantic_settings import BaseSettings
 from typing import Optional
 import torch
-from sqlalchemy.orm import Session
-from app.models.database import get_db_session, Setting
+
 
 class Settings(BaseSettings):
     # Configuración del servidor
@@ -33,10 +32,10 @@ class Settings(BaseSettings):
     VIOLENCE_THRESHOLD: float = 0.80
 
     # Configuración de procesamiento de video
-    FRAME_WIDTH: int = 640
-    FRAME_HEIGHT: int = 640
+    FRAME_WIDTH: int = 1280
+    FRAME_HEIGHT: int = 720
     PROCESS_FPS: int = 15
-    VIOLENCE_FRAME_INTERVAL: int = 4
+    VIOLENCE_FRAME_INTERVAL: int = 8
     CLIP_DURATION_SECONDS: int = 5
     AUTO_START_PROCESSING: bool = False
 
@@ -60,15 +59,6 @@ settings = Settings()
 for model_path in [settings.YOLO_MODEL_PATH, settings.TIMESFORMER_MODEL_PATH]:
     if not os.path.exists(model_path):
         raise FileNotFoundError(f"Modelo no encontrado: {model_path}")
-
-# Sincronizar con base de datos
-with get_db_session() as db:
-    violence_threshold = db.query(Setting).filter(Setting.key == "violence_threshold").first()
-    if violence_threshold:
-        settings.VIOLENCE_THRESHOLD = float(violence_threshold.value)
-    yolo_conf_threshold = db.query(Setting).filter(Setting.key == "yolo_conf_threshold").first()
-    if yolo_conf_threshold:
-        settings.YOLO_CONF_THRESHOLD = float(yolo_conf_threshold.value)
 
 # Verificar configuración de GPU al inicio
 if settings.USE_GPU and settings.DEVICE == "cuda":

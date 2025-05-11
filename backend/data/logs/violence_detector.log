@@ -1,0 +1,733 @@
+2025-05-10 19:15:40,475 - INFO - violence_detector - Sistema de logging inicializado
+2025-05-10 19:15:43,538 - INFO - violence_detector - Sistema de logging inicializado
+2025-05-10 19:15:43,594 - INFO - violence_detector - Sistema de logging inicializado
+2025-05-10 19:15:43,602 - INFO - violence_detector - Inicializando la base de datos...
+2025-05-10 19:15:43,610 - INFO - violence_detector - Sincronizando configuraciones con la base de datos...
+2025-05-10 19:15:43,611 - INFO - violence_detector - Cargando modelos de IA...
+2025-05-10 19:15:43,611 - INFO - app.ai.pipeline - Inicializando pipeline de IA...
+2025-05-10 19:15:43,612 - INFO - app.ai.detector - Inicializando detector YOLO desde ./weights/yolo11_people_final.onnx
+2025-05-10 19:15:43,612 - INFO - app.ai.detector - Utilizando CPU para inferencia YOLO
+2025-05-10 19:15:43,623 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:15:43,698 - INFO - app.ai.detector - Modelo YOLO cargado: shape de entrada [1, 3, 640, 640]
+2025-05-10 19:15:43,699 - INFO - app.ai.detector - Detector YOLO inicializado correctamente
+2025-05-10 19:15:43,976 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:15:44,335 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:15:44,691 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:15:45,047 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:15:45,406 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:15:45,762 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:15:45,804 - INFO - deep_sort_realtime.embedder.embedder_pytorch - MobileNetV2 Embedder for Deep Sort initialised
+2025-05-10 19:15:45,804 - INFO - deep_sort_realtime.embedder.embedder_pytorch - - gpu enabled: False
+2025-05-10 19:15:45,805 - INFO - deep_sort_realtime.embedder.embedder_pytorch - - half precision: False
+2025-05-10 19:15:45,805 - INFO - deep_sort_realtime.embedder.embedder_pytorch - - max batch size: 16
+2025-05-10 19:15:45,805 - INFO - deep_sort_realtime.embedder.embedder_pytorch - - expects BGR: True
+2025-05-10 19:15:45,856 - INFO - deep_sort_realtime.deepsort_tracker - DeepSort Tracker initialised
+2025-05-10 19:15:45,856 - INFO - deep_sort_realtime.deepsort_tracker - - max age: 30
+2025-05-10 19:15:45,856 - INFO - deep_sort_realtime.deepsort_tracker - - appearance threshold: 0.3
+2025-05-10 19:15:45,856 - INFO - deep_sort_realtime.deepsort_tracker - - nms threshold: OFF
+2025-05-10 19:15:45,857 - INFO - deep_sort_realtime.deepsort_tracker - - max num of appearance features: 50
+2025-05-10 19:15:45,857 - INFO - deep_sort_realtime.deepsort_tracker - - overriding track class : No
+2025-05-10 19:15:45,857 - INFO - deep_sort_realtime.deepsort_tracker - - today given : No
+2025-05-10 19:15:45,857 - INFO - deep_sort_realtime.deepsort_tracker - - in-build embedder : Yes
+2025-05-10 19:15:45,857 - INFO - deep_sort_realtime.deepsort_tracker - - polygon detections : No
+2025-05-10 19:15:45,857 - INFO - app.ai.tracker - DeepSORT inicializado con modelo pre-entrenado mobilenet
+2025-05-10 19:15:45,857 - INFO - app.ai.tracker - Tracker DeepSORT inicializado
+2025-05-10 19:15:45,858 - INFO - app.ai.classifier - Inicializando clasificador de violencia desde ./weights/timesformer_final.onnx
+2025-05-10 19:15:45,858 - INFO - app.ai.classifier - Utilizando CPU para inferencia TimeSformer
+2025-05-10 19:15:46,120 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:15:46,476 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:15:46,622 - INFO - app.ai.classifier - Modelo TimeSformer cargado: shape de entrada ['batch_size', 'num_frames', 3, 224, 224]
+2025-05-10 19:15:46,622 - INFO - app.ai.classifier - Clasificador de violencia inicializado correctamente
+2025-05-10 19:15:46,623 - INFO - app.ai.pipeline - Pipeline de IA inicializado correctamente
+2025-05-10 19:15:46,623 - INFO - violence_detector - Inicializando procesador de video...
+2025-05-10 19:15:46,623 - INFO - app.video.processor - Procesador de video inicializado
+2025-05-10 19:15:46,624 - INFO - violence_detector - ¡Aplicación inicializada correctamente!
+2025-05-10 19:15:46,834 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:15:47,191 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:15:47,548 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:15:47,905 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:15:48,263 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:15:48,620 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:15:48,977 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:15:49,335 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:15:49,693 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:15:50,052 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:15:50,374 - INFO - app.api.endpoints - Obteniendo estadísticas del día
+2025-05-10 19:15:50,398 - INFO - app.api.endpoints - Obteniendo estadísticas del día
+2025-05-10 19:15:50,404 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:15:50,760 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:15:51,117 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:15:51,471 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:15:51,832 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:15:52,186 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:15:52,543 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:15:52,899 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:15:53,257 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:15:53,617 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:15:53,976 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:15:54,334 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:15:54,690 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:15:55,047 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:15:55,404 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:15:55,760 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:15:56,119 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:15:56,475 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:15:56,835 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:15:57,190 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:15:57,546 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:15:57,901 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:15:58,257 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:15:58,615 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:15:58,972 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:15:59,328 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:15:59,684 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:16:00,040 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:16:00,398 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:16:00,753 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:16:01,110 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:16:01,467 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:16:01,826 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:16:02,185 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:16:02,542 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:16:02,898 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:16:03,256 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:16:03,575 - INFO - violence_detector - Cerrando recursos...
+2025-05-10 19:16:03,575 - INFO - app.ai.pipeline - Cerrando pipeline de IA...
+2025-05-10 19:16:03,580 - INFO - app.ai.detector - Detector YOLO cerrado
+2025-05-10 19:16:03,593 - INFO - app.ai.tracker - Tracker cerrado
+2025-05-10 19:16:03,621 - INFO - app.ai.classifier - Clasificador de violencia cerrado
+2025-05-10 19:16:03,621 - INFO - app.ai.pipeline - Pipeline de IA cerrado correctamente
+2025-05-10 19:16:03,621 - INFO - violence_detector - Aplicación cerrada correctamente.
+2025-05-10 19:34:39,114 - INFO - violence_detector - Sistema de logging inicializado
+2025-05-10 19:34:42,093 - INFO - violence_detector - Sistema de logging inicializado
+2025-05-10 19:34:42,150 - INFO - violence_detector - Sistema de logging inicializado
+2025-05-10 19:34:42,157 - INFO - violence_detector - Inicializando la base de datos...
+2025-05-10 19:34:42,162 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:34:42,166 - INFO - violence_detector - Sincronizando configuraciones con la base de datos...
+2025-05-10 19:34:42,168 - INFO - violence_detector - Cargando modelos de IA...
+2025-05-10 19:34:42,168 - INFO - app.ai.pipeline - Inicializando pipeline de IA...
+2025-05-10 19:34:42,168 - INFO - app.ai.detector - Inicializando detector YOLO desde ./weights/yolo11_people_final.onnx
+2025-05-10 19:34:42,168 - INFO - app.ai.detector - Utilizando CPU para inferencia YOLO
+2025-05-10 19:34:42,250 - INFO - app.ai.detector - Modelo YOLO cargado: shape de entrada [1, 3, 640, 640]
+2025-05-10 19:34:42,250 - INFO - app.ai.detector - Detector YOLO inicializado correctamente
+2025-05-10 19:34:42,518 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:34:42,880 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:34:43,239 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:34:43,599 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:34:43,958 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:34:44,185 - INFO - deep_sort_realtime.embedder.embedder_pytorch - MobileNetV2 Embedder for Deep Sort initialised
+2025-05-10 19:34:44,185 - INFO - deep_sort_realtime.embedder.embedder_pytorch - - gpu enabled: False
+2025-05-10 19:34:44,186 - INFO - deep_sort_realtime.embedder.embedder_pytorch - - half precision: False
+2025-05-10 19:34:44,186 - INFO - deep_sort_realtime.embedder.embedder_pytorch - - max batch size: 16
+2025-05-10 19:34:44,186 - INFO - deep_sort_realtime.embedder.embedder_pytorch - - expects BGR: True
+2025-05-10 19:34:44,230 - INFO - deep_sort_realtime.deepsort_tracker - DeepSort Tracker initialised
+2025-05-10 19:34:44,230 - INFO - deep_sort_realtime.deepsort_tracker - - max age: 30
+2025-05-10 19:34:44,230 - INFO - deep_sort_realtime.deepsort_tracker - - appearance threshold: 0.3
+2025-05-10 19:34:44,231 - INFO - deep_sort_realtime.deepsort_tracker - - nms threshold: OFF
+2025-05-10 19:34:44,231 - INFO - deep_sort_realtime.deepsort_tracker - - max num of appearance features: 50
+2025-05-10 19:34:44,231 - INFO - deep_sort_realtime.deepsort_tracker - - overriding track class : No
+2025-05-10 19:34:44,231 - INFO - deep_sort_realtime.deepsort_tracker - - today given : No
+2025-05-10 19:34:44,232 - INFO - deep_sort_realtime.deepsort_tracker - - in-build embedder : Yes
+2025-05-10 19:34:44,232 - INFO - deep_sort_realtime.deepsort_tracker - - polygon detections : No
+2025-05-10 19:34:44,232 - INFO - app.ai.tracker - DeepSORT inicializado con modelo pre-entrenado mobilenet
+2025-05-10 19:34:44,232 - INFO - app.ai.tracker - Tracker DeepSORT inicializado
+2025-05-10 19:34:44,232 - INFO - app.ai.classifier - Inicializando clasificador de violencia desde ./weights/timesformer_final.onnx
+2025-05-10 19:34:44,233 - INFO - app.ai.classifier - Utilizando CPU para inferencia TimeSformer
+2025-05-10 19:34:44,318 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:34:44,677 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:34:44,942 - INFO - app.ai.classifier - Modelo TimeSformer cargado: shape de entrada ['batch_size', 'num_frames', 3, 224, 224]
+2025-05-10 19:34:44,943 - INFO - app.ai.classifier - Clasificador de violencia inicializado correctamente
+2025-05-10 19:34:44,943 - INFO - app.ai.pipeline - Pipeline de IA inicializado correctamente
+2025-05-10 19:34:44,943 - INFO - violence_detector - Inicializando procesador de video...
+2025-05-10 19:34:44,943 - INFO - app.video.processor - Procesador de video inicializado
+2025-05-10 19:34:44,944 - INFO - violence_detector - ¡Aplicación inicializada correctamente!
+2025-05-10 19:34:45,035 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:34:45,391 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:34:45,749 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:34:46,108 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:34:46,466 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:34:46,822 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:34:47,177 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:34:47,536 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:34:47,893 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:34:48,252 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:34:48,610 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:34:48,965 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:34:49,323 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:34:49,679 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:34:50,037 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:34:50,395 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:34:50,749 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:34:51,155 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:34:51,514 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:34:51,872 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:34:52,229 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:34:52,585 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:34:52,943 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:34:53,200 - INFO - app.api.endpoints - Obteniendo estadísticas del día
+2025-05-10 19:34:53,218 - INFO - app.api.endpoints - Obteniendo estadísticas del día
+2025-05-10 19:34:53,300 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:34:53,660 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:34:54,017 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:34:54,373 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:34:54,730 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:34:55,085 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:34:55,440 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:34:55,794 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:34:56,151 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:34:56,508 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:34:56,866 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:34:57,225 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:34:57,582 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:34:57,940 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:34:58,298 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:34:58,654 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:34:59,010 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:34:59,372 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:34:59,730 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:00,088 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:00,444 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:00,801 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:01,158 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:01,516 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:01,877 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:02,236 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:02,596 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:02,954 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:03,313 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:03,673 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:04,029 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:04,385 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:04,740 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:05,099 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:05,457 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:05,814 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:06,171 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:06,527 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:06,888 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:07,246 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:07,605 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:07,958 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:08,315 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:08,672 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:09,031 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:09,386 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:09,744 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:10,106 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:10,461 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:10,817 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:11,176 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:11,533 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:11,795 - INFO - app.api.endpoints - Obteniendo estadísticas del día
+2025-05-10 19:35:11,807 - INFO - app.api.endpoints - Obteniendo estadísticas del día
+2025-05-10 19:35:11,892 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:12,246 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:12,607 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:12,961 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:13,323 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:13,679 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:14,036 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:14,392 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:14,748 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:15,103 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:15,458 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:15,815 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:16,169 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:16,526 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:16,883 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:17,240 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:17,598 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:17,953 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:18,313 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:18,668 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:19,030 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:19,381 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:19,739 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:20,098 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:20,459 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:20,817 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:21,175 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:21,531 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:21,889 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:22,247 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:22,606 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:22,965 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:23,323 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:23,682 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:24,035 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:24,395 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:24,750 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:25,108 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:25,466 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:25,824 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:26,179 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:26,535 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:26,893 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:27,252 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:27,610 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:27,767 - INFO - app.api.endpoints - Obteniendo estadísticas del día
+2025-05-10 19:35:27,778 - INFO - app.api.endpoints - Obteniendo estadísticas del día
+2025-05-10 19:35:27,965 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:28,323 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:28,680 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:29,036 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:29,392 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:29,751 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:30,108 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:30,466 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:30,824 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:31,184 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:31,540 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:31,897 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:32,255 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:32,611 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:32,967 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:33,323 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:33,683 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:34,046 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:34,403 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:34,757 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:35,111 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:35,467 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:35,825 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:36,181 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:36,554 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:36,926 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:37,283 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:37,638 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:37,997 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:38,355 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:38,711 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:39,067 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:39,421 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:39,779 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:40,139 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:40,496 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:40,852 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:41,211 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:41,571 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:41,929 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:42,285 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:42,641 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:42,996 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:43,352 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:43,704 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:44,062 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:44,420 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:44,778 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:45,135 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:45,494 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:45,850 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:46,208 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:46,565 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:46,925 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:47,281 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:47,635 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:47,993 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:48,353 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:48,711 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:49,068 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:49,426 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:49,783 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:50,143 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:50,502 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:50,857 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:51,217 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:51,574 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:51,929 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:52,290 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:52,649 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:53,004 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:53,362 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:53,720 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:54,078 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:54,435 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:54,794 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:55,149 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:55,508 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:55,866 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:56,225 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:56,581 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:56,939 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:57,296 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:57,652 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:58,012 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:58,369 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:58,727 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:59,084 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:59,443 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:35:59,815 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:00,179 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:00,535 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:00,893 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:01,252 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:01,608 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:01,969 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:02,322 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:02,680 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:03,038 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:03,395 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:03,750 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:04,107 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:04,465 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:04,823 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:05,181 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:05,554 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:05,910 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:06,268 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:06,628 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:06,987 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:07,345 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:07,701 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:08,056 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:08,414 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:08,776 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:09,131 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:09,490 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:09,846 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:10,201 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:10,560 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:10,914 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:11,273 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:11,626 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:11,983 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:12,338 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:12,697 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:13,056 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:13,412 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:13,772 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:14,128 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:14,488 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:14,846 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:15,206 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:15,563 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:15,921 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:16,280 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:16,637 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:17,040 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:17,398 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:17,757 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:18,114 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:18,471 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:18,829 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:19,187 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:19,546 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:19,909 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:20,266 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:20,621 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:20,980 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:21,338 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:21,702 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:22,054 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:22,409 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:22,767 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:23,126 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:23,480 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:23,835 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:24,191 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:24,546 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:24,903 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:25,259 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:25,614 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:25,973 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:26,331 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:26,686 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:27,043 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:27,399 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:27,759 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:28,113 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:28,472 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:28,827 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:29,187 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:29,543 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:29,900 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:30,259 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:30,618 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:30,976 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:31,333 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:31,690 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:32,049 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:32,405 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:32,774 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:33,134 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:33,490 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:33,848 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:34,205 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:34,560 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:34,916 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:35,272 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:35,627 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:35,984 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:36,341 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:36,696 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:37,053 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:37,410 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:37,767 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:38,125 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:38,481 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:38,838 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:39,194 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:39,553 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:39,911 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:40,268 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:40,625 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:40,983 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:41,344 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:41,703 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:42,061 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:42,420 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:42,775 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:43,140 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:43,496 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:43,853 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:44,208 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:44,563 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:44,921 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:45,276 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:45,842 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:46,206 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:46,561 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:46,937 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:47,336 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:47,694 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:48,050 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:48,812 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:49,171 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:49,526 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:49,882 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:50,240 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:50,600 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:51,715 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:52,080 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:52,436 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:52,789 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:53,149 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:53,509 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:53,868 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:54,226 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:54,582 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:54,939 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:55,297 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:55,658 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:56,013 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:56,372 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:56,731 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:57,091 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:57,452 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:57,810 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:58,167 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:58,523 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:58,879 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:59,233 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:59,593 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:36:59,951 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:00,308 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:00,665 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:01,025 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:01,385 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:01,741 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:02,097 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:02,456 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:02,812 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:03,169 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:03,526 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:03,881 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:04,235 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:04,591 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:04,950 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:05,307 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:05,666 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:06,023 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:06,380 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:06,735 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:07,091 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:07,446 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:07,802 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:08,160 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:08,518 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:08,876 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:09,233 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:09,591 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:09,946 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:10,303 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:10,659 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:11,015 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:11,371 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:11,729 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:12,088 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:12,445 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:12,806 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:13,161 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:13,518 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:13,876 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:14,232 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:14,594 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:14,949 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:15,307 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:15,665 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:16,024 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:16,381 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:16,737 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:17,092 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:17,449 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:17,805 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:18,161 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:18,518 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:18,874 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:19,230 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:19,584 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:19,940 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:20,300 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:20,655 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:21,011 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:21,371 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:21,730 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:22,087 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:22,445 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:22,802 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:23,159 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:23,518 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:23,874 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:24,233 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:24,587 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:24,945 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:25,301 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:25,662 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:26,020 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:26,377 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:26,734 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:27,096 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:27,454 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:27,812 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:28,171 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:28,529 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:28,886 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:29,240 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:29,601 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:29,959 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:30,318 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:30,675 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:31,033 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:31,391 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:31,748 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:32,104 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:32,463 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:32,823 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:33,180 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:33,534 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:33,890 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:34,248 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:34,605 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:34,961 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:35,318 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:35,676 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:36,030 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:36,390 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:36,746 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:37,105 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:37,325 - INFO - app.api.endpoints - Obteniendo estadísticas del día
+2025-05-10 19:37:37,336 - INFO - app.api.endpoints - Obteniendo estadísticas del día
+2025-05-10 19:37:37,460 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:37,816 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:38,179 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:38,535 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:38,894 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:39,251 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:39,609 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:39,966 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:40,319 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:40,675 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:41,028 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:41,390 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:41,744 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:42,105 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:42,461 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:42,818 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:43,173 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:43,529 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:43,887 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:44,242 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:44,599 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:44,958 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:45,315 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:45,675 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:46,032 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:46,392 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:46,750 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:47,104 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:47,460 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:47,820 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:48,178 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:48,534 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:48,895 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:49,260 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:49,618 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:49,976 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:50,333 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:50,692 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:51,049 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:51,404 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:51,761 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:52,121 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:52,477 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:52,834 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:53,190 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:53,548 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:53,906 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:54,262 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:54,619 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:54,974 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:55,331 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:55,691 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:56,048 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:56,407 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:56,763 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:57,120 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:57,478 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:57,836 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:58,190 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:58,546 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:58,903 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:59,260 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:59,617 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:37:59,972 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:38:00,329 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:38:00,687 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:38:01,044 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:38:01,401 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:38:01,757 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:38:02,114 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:38:02,471 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:38:02,829 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:38:03,185 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:38:03,541 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:38:03,897 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:38:04,254 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:38:04,610 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:38:04,969 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:38:05,326 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:38:05,684 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:38:06,039 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:38:06,393 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:38:06,753 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:38:07,111 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:38:07,468 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:38:07,825 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:38:08,179 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:38:08,536 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:38:08,892 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:38:09,247 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:38:09,605 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:38:09,962 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:38:10,322 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:38:10,679 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:38:11,035 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:38:11,392 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:38:11,758 - INFO - watchfiles.main - 1 change detected
+2025-05-10 19:38:12,203 - INFO - violence_detector - Cerrando recursos...
+2025-05-10 19:38:12,204 - INFO - app.ai.pipeline - Cerrando pipeline de IA...
+2025-05-10 19:38:12,212 - INFO - app.ai.detector - Detector YOLO cerrado
+2025-05-10 19:38:12,233 - INFO - app.ai.tracker - Tracker cerrado
+2025-05-10 19:38:12,263 - INFO - app.ai.classifier - Clasificador de violencia cerrado
+2025-05-10 19:38:12,263 - INFO - app.ai.pipeline - Pipeline de IA cerrado correctamente
+2025-05-10 19:38:12,264 - INFO - violence_detector - Aplicación cerrada correctamente.

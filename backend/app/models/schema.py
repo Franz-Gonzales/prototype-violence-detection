@@ -1,8 +1,6 @@
 from pydantic import BaseModel, validator, Field
 from typing import List, Optional
 from datetime import datetime
-import json
-
 
 # Schema para incidentes
 class IncidentBase(BaseModel):
@@ -15,14 +13,14 @@ class IncidentCreate(IncidentBase):
 
 class PersonBase(BaseModel):
     person_id: int
-    bounding_box: List[float]
+    bounding_box: List[int]
     
     @validator('bounding_box')
     def validate_bbox(cls, v):
         if len(v) != 4:
             raise ValueError('El bounding box debe tener 4 valores [x, y, w, h]')
         return v
-    
+
 class PersonCreate(PersonBase):
     incident_id: int
 
@@ -48,7 +46,6 @@ class DetectionResponse(BaseModel):
     violence_detected: bool = False
     violence_score: Optional[float] = None
 
-
 # Schema para configuración
 class SettingUpdate(BaseModel):
     value: str
@@ -59,6 +56,18 @@ class SettingResponse(BaseModel):
     
     class Config:
         orm_mode = True
+
+# Schema para estadísticas
+class TodayStatsResponse(BaseModel):
+    total: int
+    by_status: dict
+    date: str
+
+class WeeklyStatsResponse(BaseModel):
+    total: int
+    daily_counts: List[dict]
+    week_start: str
+    week_end: str
 
 # Schema para websocket
 class WebSocketCommand(BaseModel):

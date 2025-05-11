@@ -1,98 +1,78 @@
 import axios from 'axios';
 
-// Cliente API
-const apiClient = axios.create({
+const api = axios.create({
     baseURL: '/api',
-    headers: {
-        'Content-Type': 'application/json',
-    },
+    timeout: 10000,
 });
 
-// Interceptores para manejar errores
-apiClient.interceptors.response.use(
-    (response) => response,
-    (error) => {
-        console.error('API Error:', error);
-        return Promise.reject(error);
-    }
+api.interceptors.request.use(
+    (config) => {
+        const token = localStorage.getItem('violence_detector_token');
+        if (token) {
+            config.headers.Authorization = `Bearer ${token}`;
+        }
+        return config;
+    },
+    (error) => Promise.reject(error)
 );
 
-// Función para obtener incidentes
 export const fetchIncidents = async (params = {}) => {
     try {
-        const response = await apiClient.get('/incidents', { params });
+        const response = await api.get('/incidents', { params });
         return response.data;
     } catch (error) {
-        console.error('Error fetching incidents:', error);
-        throw error;
+        throw new Error(error.response?.data?.message || 'Error al obtener incidentes');
     }
 };
 
-// Función para obtener un incidente por ID
-export const fetchIncidentById = async (id) => {
-    try {
-        const response = await apiClient.get(`/incidents/${id}`);
-        return response.data;
-    } catch (error) {
-        console.error(`Error fetching incident #${id}:`, error);
-        throw error;
-    }
-};
-
-
-// Función para actualizar estado de un incidente
 export const updateIncidentStatus = async (id, status) => {
     try {
-        const response = await apiClient.put(`/incidents/${id}?status=${status}`);
+        const response = await api.patch(`/incidents/${id}/status`, { status });
         return response.data;
     } catch (error) {
-        console.error(`Error updating incident #${id}:`, error);
-        throw error;
+        throw new Error(error.response?.data?.message || 'Error al actualizar estado');
     }
 };
 
-// Función para obtener estado del stream
-export const fetchStreamStatus = async () => {
+export const getStreamStatus = async () => {
     try {
-        const response = await apiClient.get('/stream/status');
+        const response = await api.get('/stream/status');
         return response.data;
     } catch (error) {
-        console.error('Error fetching stream status:', error);
-        throw error;
+        throw new Error(error.response?.data?.message || 'Error al obtener estado del stream');
     }
 };
 
-// Función para obtener estadísticas
-export const fetchStats = async (period = 'today') => {
+export const fetchStats = async (period) => {
     try {
-        const response = await apiClient.get(`/stats/${period}`);
+        const response = await api.get(`/stats/${period}`);
         return response.data;
     } catch (error) {
-        console.error(`Error fetching ${period} stats:`, error);
-        throw error;
+        throw new Error(error.response?.data?.message || 'Error al obtener estadísticas');
     }
 };
 
-// Función para obtener configuración
-export const fetchSettings = async () => {
+export const fetchConfig = async () => {
     try {
-        const response = await apiClient.get('/settings');
+        const response = await api.get('/config');
         return response.data;
     } catch (error) {
-        console.error('Error fetching settings:', error);
-        throw error;
+        throw new Error(error.response?.data?.message || 'Error al obtener configuración');
     }
 };
 
-// Función para actualizar configuración
-export const updateSetting = async (key, value) => {
+export const updateConfig = async (config) => {
     try {
-        const response = await apiClient.put(`/settings/${key}`, { value });
+        const response = await api.patch('/config', config, {
+            cancelToken: new axios.CancelToken((c) => {
+                config.cancel = c;
+            }),
+        });
         return response.data;
     } catch (error) {
-        console.error(`Error updating setting ${key}:`, error);
-        throw error;
+        if (axios.isCancel(error)) {
+            throw new Error('Petición cancelada');
+        }
+        throw new Error(error.response?.data?.message || 'Error al actualizar configuración');
     }
 };
-
-export default apiClient;

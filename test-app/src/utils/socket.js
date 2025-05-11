@@ -1,53 +1,26 @@
 import { io } from 'socket.io-client';
+import toast from 'react-hot-toast';
 
-// Configuración para Socket.IO
-const SOCKET_URL = window.location.origin;
-const SOCKET_PATH = '/ws/socket.io';
+// const backendUrl = import.meta.env.VITE_BACKEND_URL || 'http://localhost:8000';
+const backendUrl = 'http://localhost:8000';
 
-let socket = null;
-
-// Crear conexión de socket
 export const createSocket = () => {
-    if (socket) return socket;
-
-    socket = io(SOCKET_URL, {
-        path: SOCKET_PATH,
-        transports: ['websocket'],
-        reconnection: true,
-        reconnectionAttempts: 5,
-        reconnectionDelay: 1000,
-    });
-
-    // Eventos de conexión
-    socket.on('connect', () => {
-        console.log('Socket conectado');
-    });
-
-    socket.on('disconnect', () => {
-        console.log('Socket desconectado');
+    const token = localStorage.getItem('violence_detector_token');
+    const socket = io(backendUrl, {
+        path: '/ws/socket.io',
+        auth: token ? { token } : {},
+        reconnectionAttempts: 10,
+        timeout: 5000,
+        pingInterval: 30000,
     });
 
     socket.on('connect_error', (err) => {
-        console.error('Error de conexión Socket:', err);
+        toast.error('Error de conexión WebSocket: ' + (err.message || 'Desconocido'));
+    });
+
+    socket.on('error', (data) => {
+        toast.error(data.message || 'Error desconocido en WebSocket');
     });
 
     return socket;
 };
-
-// Obtener socket existente o crear uno nuevo
-export const getSocket = () => {
-    if (!socket) {
-        return createSocket();
-    }
-    return socket;
-};
-
-// Cerrar socket
-export const closeSocket = () => {
-    if (socket) {
-        socket.disconnect();
-        socket = null;
-    }
-};
-
-export default { createSocket, getSocket, closeSocket };

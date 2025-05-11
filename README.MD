@@ -127,3 +127,19 @@ El sistema utiliza los siguientes modelos:
 
 - set PYTHONPATH=C:\GONZALES\Proyecto-IA3\prototype-violence-detection\backend
 - python -m app.main
+
+# Para borrar caché
+Remove-Item -Recurse -Force .\app\__pycache__\
+Remove-Item -Recurse -Force .\app\*\__pycache__\
+
+### Reinicia el entorno virtual:
+deactivate
+.\venv\Scripts\activate
+
+Limpia la caché de pip:
+- pip cache purge
+
+
+# Para borrar el caché del front
+- npm cache clean --force
+- npm cache clean --force

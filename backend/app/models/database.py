@@ -1,16 +1,16 @@
 import os
-from sqlalchemy import create_engine, Column, Integer, Float, String, DateTime, ForeignKey, Text
+from sqlalchemy import create_engine, Column, Integer, Float, String, DateTime, Index
 from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy import ForeignKey
 from sqlalchemy.orm import sessionmaker, relationship
 from datetime import datetime
 from contextlib import contextmanager
-import json
 
 from app.config import settings
 
 # Crear motor de base de datos
 engine = create_engine(
-    settings.DATABASE_URL, 
+    settings.DATABASE_URL,
     connect_args={"check_same_thread": False} if settings.DATABASE_URL.startswith("sqlite") else {}
 )
 
@@ -20,17 +20,16 @@ SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 # Crear base declarativa
 Base = declarative_base()
 
-
 # Modelo para incidentes
 class Incident(Base):
     __tablename__ = "incidents"
     
     id = Column(Integer, primary_key=True, index=True)
-    timestamp = Column(DateTime, default=datetime.now)
+    timestamp = Column(DateTime, default=datetime.now, index=True)
     violence_score = Column(Float, nullable=False)
     location = Column(String, nullable=True)
     clip_path = Column(String, nullable=False)
-    status = Column(String, default="new")
+    status = Column(String, default="new", index=True)
     
     # Relación con personas
     persons = relationship("Person", back_populates="incident")
@@ -45,7 +44,6 @@ class Incident(Base):
             "status": self.status,
             "persons": [person.to_dict() for person in self.persons]
         }
-    
 
 # Modelo para personas involucradas en incidentes
 class Person(Base):
@@ -53,26 +51,22 @@ class Person(Base):
     
     id = Column(Integer, primary_key=True, index=True)
     incident_id = Column(Integer, ForeignKey("incidents.id"))
-    person_id = Column(Integer, nullable=False)  # ID asignado por DeepSORT
-    bounding_box = Column(Text, nullable=False)  # JSON con coordenadas [x, y, w, h]
+    person_id = Column(Integer, nullable=False)
+    x = Column(Integer, nullable=False)
+    y = Column(Integer, nullable=False)
+    w = Column(Integer, nullable=False)
+    h = Column(Integer, nullable=False)
     
     # Relación con incidente
     incident = relationship("Incident", back_populates="persons")
-    
-    def set_bounding_box(self, bbox):
-        self.bounding_box = json.dumps(bbox)
-    
-    def get_bounding_box(self):
-        return json.loads(self.bounding_box)
     
     def to_dict(self):
         return {
             "id": self.id,
             "incident_id": self.incident_id,
             "person_id": self.person_id,
-            "bounding_box": self.get_bounding_box()
+            "bounding_box": [self.x, self.y, self.w, self.h]
         }
-    
 
 # Modelo para configuración
 class Setting(Base):
@@ -86,13 +80,15 @@ class Setting(Base):
             "key": self.key,
             "value": self.value
         }
-    
+
+# Índices adicionales
+Index('ix_incidents_timestamp', Incident.timestamp)
+Index('ix_incidents_status', Incident.status)
 
 # Inicializar base de datos
 def init_db():
     Base.metadata.create_all(bind=engine)
     
-    # Insertar configuración por defecto si no existe
     with get_db_session() as db:
         if db.query(Setting).filter(Setting.key == "violence_threshold").first() is None:
             db.add(Setting(key="violence_threshold", value=str(settings.VIOLENCE_THRESHOLD)))
@@ -101,8 +97,6 @@ def init_db():
         if db.query(Setting).filter(Setting.key == "camera_location").first() is None:
             db.add(Setting(key="camera_location", value=settings.CAMERA_LOCATION))
 
-
-# Obtener sesión de base de datos
 @contextmanager
 def get_db_session():
     db = SessionLocal()
@@ -111,7 +105,6 @@ def get_db_session():
     finally:
         db.close()
 
-# Función para obtener una sesión para los endpoints
 def get_db():
     db = SessionLocal()
     try:

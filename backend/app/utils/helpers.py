@@ -14,7 +14,6 @@ from pathlib import Path
 from app.config import settings
 
 def setup_logging() -> logging.Logger:
-    """Configura el sistema de logging de la aplicación"""
     # Crear directorio de logs si no existe
     log_dir = os.path.join(settings.DATA_DIR, 'logs')
     os.makedirs(log_dir, exist_ok=True)
@@ -51,83 +50,69 @@ def setup_logging() -> logging.Logger:
     return logger
 
 def generate_filename(prefix: str, extension: str) -> str:
-    """Genera un nombre de archivo único basado en timestamp"""
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S_%f")
     return f"{prefix}_{timestamp}.{extension}"
 
 def save_frame(frame: np.ndarray, filepath: str) -> bool:
-    """
-    Guarda un frame como imagen
-    
-    Args:
-        frame: Frame de video a guardar
-        filepath: Ruta donde guardar la imagen
-        
-    Returns:
-        True si la operación fue exitosa, False en caso contrario
-    """
     try:
         # Asegurar que el directorio existe
         os.makedirs(os.path.dirname(filepath), exist_ok=True)
         
-        # Guardar frame como imagen
-        cv2.imwrite(filepath, frame)
+        # Comprimir frame a JPEG con calidad del 90%
+        _, buffer = cv2.imencode('.jpg', frame, [cv2.IMWRITE_JPEG_QUALITY, 90])
+        with open(filepath, 'wb') as f:
+            f.write(buffer)
         
+        logger = logging.getLogger("violence_detector")
+        logger.debug(f"Frame guardado en {filepath}")
         return True
     except Exception as e:
-        logging.error(f"Error al guardar frame: {e}")
+        logger = logging.getLogger("violence_detector")
+        logger.error(f"Error al guardar frame: {e}")
         return False
 
-async def save_video_clip(frames: List[np.ndarray], output_path: str, fps: int = 30) -> bool:
-    """
-    Guarda una secuencia de frames como clip de video
-    
-    Args:
-        frames: Lista de frames a guardar
-        output_path: Ruta donde guardar el video
-        fps: Frames por segundo del video
-        
-    Returns:
-        True si la operación fue exitosa, False en caso contrario
-    """
+async def save_video_clip(frames: List[np.ndarray], output_path: str, fps: int = None) -> bool:
     if not frames:
-        logging.error("No hay frames para guardar como clip")
+        logger = logging.getLogger("violence_detector")
+        logger.error("No hay frames para guardar como clip")
         return False
     
     try:
         # Asegurar que el directorio existe
         os.makedirs(os.path.dirname(output_path), exist_ok=True)
         
-        # Obtener dimensiones del primer frame
+        # Usar PROCESS_FPS (15) por defecto
+        fps = fps or settings.PROCESS_FPS
         height, width = frames[0].shape[:2]
         
         # Método 1: Usar OpenCV (rápido pero limitado)
         try:
-            # Crear writer de video
             fourcc = cv2.VideoWriter_fourcc(*'mp4v')
             writer = cv2.VideoWriter(output_path, fourcc, fps, (width, height))
+            if not writer.isOpened():
+                raise Exception("No se pudo inicializar VideoWriter")
             
-            # Escribir cada frame
             for frame in frames:
                 writer.write(frame)
             
-            # Liberar recursos
             writer.release()
             
+            logger = logging.getLogger("violence_detector")
+            logger.debug(f"Clip guardado con OpenCV en {output_path}")
             return os.path.exists(output_path)
         
         except Exception as e:
-            logging.warning(f"Error al guardar video con OpenCV: {e}, intentando con FFmpeg")
+            logger = logging.getLogger("violence_detector")
+            logger.warning(f"Error al guardar video con OpenCV: {e}, intentando con FFmpeg")
         
         # Método 2: Usar FFmpeg (más compatible y mejor calidad)
-        # Guardar frames en directorio temporal
         with tempfile.TemporaryDirectory() as temp_dir:
             # Guardar frames como imágenes
             for i, frame in enumerate(frames):
                 frame_path = os.path.join(temp_dir, f"frame_{i:04d}.jpg")
                 cv2.imwrite(frame_path, frame, [cv2.IMWRITE_JPEG_QUALITY, 95])
             
-            # Comando FFmpeg para crear video
+            # Comando FFmpeg para crear video con mayor compresión
             ffmpeg_cmd = [
                 'ffmpeg',
                 '-y',  # Sobrescribir si existe
@@ -135,7 +120,7 @@ async def save_video_clip(frames: List[np.ndarray], output_path: str, fps: int =
                 '-i', os.path.join(temp_dir, 'frame_%04d.jpg'),
                 '-c:v', 'libx264',
                 '-preset', 'fast',
-                '-crf', '23',
+                '-crf', '28',  # Mayor compresión
                 '-pix_fmt', 'yuv420p',
                 output_path
             ]
@@ -150,14 +135,17 @@ async def save_video_clip(frames: List[np.ndarray], output_path: str, fps: int =
             stdout, stderr = await process.communicate()
             
             # Verificar resultado
+            logger = logging.getLogger("violence_detector")
             if process.returncode != 0:
-                logging.error(f"Error al ejecutar FFmpeg: {stderr.decode()}")
+                logger.error(f"Error al ejecutar FFmpeg: {stderr.decode()}")
                 return False
             
+            logger.debug(f"Clip guardado con FFmpeg en {output_path}")
             return os.path.exists(output_path)
     
     except Exception as e:
-        logging.error(f"Error al guardar clip de video: {e}")
+        logger = logging.getLogger("violence_detector")
+        logger.error(f"Error al guardar clip de video: {e}")
         return False
 
 def format_timedelta(seconds: float) -> str:
